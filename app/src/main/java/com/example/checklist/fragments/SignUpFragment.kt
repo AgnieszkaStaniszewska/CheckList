@@ -15,9 +15,9 @@ import com.google.firebase.auth.FirebaseAuth
 
 class SignUpFragment : Fragment() {
 
-    private lateinit var auth: FirebaseAuth
-    private lateinit var navControl: NavController
-    private lateinit var binding: FragmentSignUpBinding
+    private lateinit var auth:FirebaseAuth
+    private lateinit var navControl:NavController
+    private lateinit var binding:FragmentSignUpBinding
 
 
     override fun onCreateView(
@@ -56,7 +56,7 @@ class SignUpFragment : Fragment() {
             if (email.isNotEmpty() && pass.isNotEmpty() && verifyPass.isNotEmpty())
                 if (pass == verifyPass){
                     auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(
-                        OnCompleteListener {
+                        OnCompleteListener{
                             if (it.isSuccessful){
                                 Toast.makeText(context, "Pomyślnie zarejestrowano.", Toast.LENGTH_SHORT).show()
                                 navControl.navigate(R.id.action_signUpFragment_to_homeFragment)
